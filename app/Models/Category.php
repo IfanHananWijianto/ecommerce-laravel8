@@ -15,4 +15,12 @@ class Category extends Model
         'category_icon',
     ];
 
+    public function subcategory(){
+        return $this->hasMany('App\Models\SubCategory');
+    }
+
+    public function subsubcategory(){
+        return $this->hasMany('App\Models\SubSubCategory');
+    }
+    
 }

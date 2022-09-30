@@ -73,7 +73,10 @@ class CategoryController extends Controller
 
     public function CategoryDelete($id){
 
-    	Category::findOrFail($id)->delete();
+			$category = Category::find($id);
+			$category->subcategory()->delete();
+			$category->subsubcategory()->delete();
+			$category->delete();
 
     	$notification = array(
 			'message' => 'Brand Berhasil Dihapus!',
