@@ -179,6 +179,10 @@ Route::get('/inactive/{id}', [ProductController::class, 'ProductInactive'])->nam
 Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('product.active');
 
 Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+
+Route::get('/export/excel', [ProductController::class, 'ExportExcel'])->name('export.excel');
+
+Route::post('/import/excel', [ProductController::class, 'ImportExcel'])->name('import.excel');
  
 });
 

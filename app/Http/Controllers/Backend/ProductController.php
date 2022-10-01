@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Exports\ProductExport;
+use App\Imports\ProductImport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -13,7 +15,10 @@ use App\Models\Product;
 use App\Models\MultiImg;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 
+use League\Flysystem\File;
 class ProductController extends Controller
 {
     
@@ -284,11 +289,40 @@ class ProductController extends Controller
 
 
   // product Stock 
-public function ProductStock(){
+	public function ProductStock(){
 
-    $products = Product::latest()->get();
-    return view('backend.product.product_stock',compact('products'));
-  }
+			$products = Product::latest()->get();
+			return view('backend.product.product_stock',compact('products'));
+		}
+
+		public function ExportExcel()
+    {
+      return Excel::download(new ProductExport(), 'product.xlsx');
+    }
+
+		public function ImportExcel(Request $request)
+    {
+			$file = $request->file('file');
+
+        // membuat nama file unik
+        $nama_file = $file->hashName();
+
+        //temporary file
+        $path = $file->storeAs('public/excel/',$nama_file);
+
+        // import data
+        $import = Excel::import(new ProductImport(), storage_path('app/public/excel/'.$nama_file));
+
+        //remove from server
+        Storage::delete($path);
+
+				// $file  = $request->file('file');
+				// $name_file = $file->getClientOriginalName();
+				// $file->move('DataProduk', $name_file);
+
+				// Excel::import(new ProductImport, public_path('/DataProduk'.$name_file));
+				return redirect()->back();
+    }
 
 
 }
