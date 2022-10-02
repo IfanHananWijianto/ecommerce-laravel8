@@ -5,19 +5,20 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure?',
-                    text: "Delete This Data?",
+                    title: 'Apakah anda yakin ?',
+                    text: "Data yang sudah dihapus tidak bisa kembali?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal',
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
                         'Deleted!',
-                        'Your file has been deleted.',
+                        'Data berhasil dihapus',
                         'success'
                       )
                     }

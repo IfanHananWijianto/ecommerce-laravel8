@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\SubSubCategory;
  
 class CategoryController extends Controller
 {
@@ -33,7 +35,7 @@ class CategoryController extends Controller
     	]);
 
 	    $notification = array(
-			'message' => 'Brand Berhasil Ditambah!',
+			'message' => 'Kategori Berhasil Ditambah!',
 			'alert-type' => 'success'
 		);
 
@@ -61,7 +63,7 @@ class CategoryController extends Controller
     	]);
 
 	    $notification = array(
-			'message' => 'Brand Berhasil Diperbarui!',
+			'message' => 'Kategori Berhasil Diperbarui!',
 			'alert-type' => 'success'
 		);
 
@@ -73,13 +75,12 @@ class CategoryController extends Controller
 
     public function CategoryDelete($id){
 
-			$category = Category::find($id);
-			$category->subcategory()->delete();
-			$category->subsubcategory()->delete();
-			$category->delete();
+			Category::findOrFail($id)->delete();
+			SubCategory::where('category_id',$id)->delete();
+			SubSubCategory::where('category_id',$id)->delete();
 
     	$notification = array(
-			'message' => 'Brand Berhasil Dihapus!',
+			'message' => 'Kategori Berhasil Dihapus!',
 			'alert-type' => 'success'
 		);
 

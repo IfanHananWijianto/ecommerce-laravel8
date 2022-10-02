@@ -21,7 +21,7 @@ class SubCategory extends Model
 
     public function subsubcategory()
     {
-        return $this->belongsToMany('App\Models\SubSubCategory');
+        return $this->hasMany('App\Models\SubSubCategory');
     }
 
 }

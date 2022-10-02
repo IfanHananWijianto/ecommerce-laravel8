@@ -82,6 +82,8 @@ public function DivisionStore(Request $request){
     public function DivisionDelete($id){
 
     	ShipDivision::findOrFail($id)->delete();
+    	ShipDistrict::where('division_id',$id)->delete();
+    	ShipState::where('division_id',$id)->delete();
 
     	$notification = array(
 			'message' => 'Data Berhasil Dihapus',
@@ -168,6 +170,7 @@ public function DistrictEdit($id){
       public function DistrictDelete($id){
 
     	ShipDistrict::findOrFail($id)->delete();
+    	ShipState::where('district_id',$id)->delete();
 
     	$notification = array(
 			'message' => 'Data Berhasil Diperbarui',

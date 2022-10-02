@@ -83,9 +83,10 @@ class SubCategoryController extends Controller
 
     public function SubCategoryDelete($id){
 
-    	SubCategory::findOrFail($id)->delete();
+    SubCategory::findOrFail($id)->delete();
+		SubSubCategory::where('subcategory_id',$id)->delete();
 
-    	$notification = array(
+    $notification = array(
 			'message' => 'SubCategory Berhasil Di Hapus',
 			'alert-type' => 'info'
 		);
