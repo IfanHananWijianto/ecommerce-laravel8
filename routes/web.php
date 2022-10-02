@@ -183,6 +183,8 @@ Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('p
 Route::get('/export/excel', [ProductController::class, 'ExportExcel'])->name('export.excel');
 
 Route::post('/import/excel', [ProductController::class, 'ImportExcel'])->name('import.excel');
+
+Route::get('/cetak-pdf', [ProductController::class, 'CetakPDF']);
  
 });
 

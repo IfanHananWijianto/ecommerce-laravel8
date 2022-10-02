@@ -19,6 +19,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 use League\Flysystem\File;
+use Barryvdh\DomPDF\Facade as PDF;
+
 class ProductController extends Controller
 {
     
@@ -299,12 +301,12 @@ class ProductController extends Controller
     {
       return Excel::download(new ProductExport(), 'product.xlsx');
     }
-
+		
 		public function ImportExcel(Request $request)
     {
 			$file = $request->file('file');
-
-        // membuat nama file unik
+			
+			// membuat nama file unik
         $nama_file = $file->hashName();
 
         //temporary file
@@ -324,6 +326,12 @@ class ProductController extends Controller
 				return redirect()->back();
     }
 
-
-}
- 
+		public function CetakPDF()
+		{
+    	$products = Product::latest()->get();
+			return view('backend.product.product_pdf', compact('products'));
+    
+		}
+		
+	}
+	

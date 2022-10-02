@@ -19,7 +19,8 @@
                                         {{ count($products) }} </span></h3>
                             </div>
                             <div class="col-md-6 d-flex align-items-right">
-                                <a href="{{ route('export.excel') }}" class="btn btn-success ml-auto">Export</a>
+                                <a target="__blank" href="{{ url('/product/cetak-pdf') }}" class="btn btn-danger ml-auto">PDF</a>
+                                <a href="{{ route('export.excel') }}" class="btn btn-success ml-2">Export</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
                                     Import
