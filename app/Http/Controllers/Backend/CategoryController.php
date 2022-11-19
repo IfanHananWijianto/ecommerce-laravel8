@@ -86,7 +86,7 @@ class CategoryController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 }

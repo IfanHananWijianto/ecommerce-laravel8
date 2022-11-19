@@ -234,7 +234,7 @@ class ProductController extends Controller
      	MultiImg::findOrFail($id)->delete();
 
      	$notification = array(
-			'message' => 'Produk Galeri Berhasil Diperbarui',
+			'message' => 'Produk Galeri Berhasil Di Hapus',
 			'alert-type' => 'success'
 		);
 
@@ -280,7 +280,7 @@ class ProductController extends Controller
      	}
 
      	$notification = array(
-			'message' => 'Produk Berhasil Diperbarui',
+			'message' => 'Produk Berhasil Di Hapus',
 			'alert-type' => 'success'
 		);
 

@@ -43,7 +43,7 @@
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                             <a href="{{ route('category.delete', $item->id) }}"
-                                                class="btn btn-sm btn-danger" id="delete" title="Hapus Data">
+                                                class="btn btn-sm btn-danger" id="deletecategory" title="Hapus Data">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>

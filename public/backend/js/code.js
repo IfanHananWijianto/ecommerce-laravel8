@@ -17,7 +17,69 @@ $(function(){
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Deleted!',
+                        'Terhapus!',
+                        'Data berhasil dihapus',
+                        'success'
+                      )
+                    }
+                  }) 
+
+
+    });
+
+  });
+
+$(function(){
+    $(document).on('click','#deletesubcategory',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+
+  
+                  Swal.fire({
+                    title: 'Apakah anda yakin ?',
+                    text: "Data yang ada di sub-sub kategori juga akan terhapus?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.href = link
+                      Swal.fire(
+                        'Terhapus!',
+                        'Data berhasil dihapus',
+                        'success'
+                      )
+                    }
+                  }) 
+
+
+    });
+
+  });
+
+$(function(){
+    $(document).on('click','#deletecategory',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+
+  
+                  Swal.fire({
+                    title: 'Apakah anda yakin ?',
+                    text: "Data yang ada di sub kategori dan sub-sub kategori juga akan terhapus?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.href = link
+                      Swal.fire(
+                        'Terhapus!',
                         'Data berhasil dihapus',
                         'success'
                       )
@@ -39,19 +101,19 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure to Confirm?',
-                    text: "Once Confirm, You will not be able to pending again",
+                    title: 'Apakah anda yakin?',
+                    text: "Status pesanan akan diubah jadi dikonfirmasi?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, Confirm!'
+                    confirmButtonText: 'Ya, Konfirmasi!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Confirm!',
-                        'Confirm Changes',
+                        'Dikonfirmasi!',
+                        'Status Pesanan Berhasil Diubah',
                         'success'
                       )
                     }
@@ -72,19 +134,19 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure to Processing?',
-                    text: "Once Processing, You will not be able to pending again",
+                    title: 'Apakah anda yakin?',
+                    text: "Status pesanan akan diubah jadi dikemas?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, Processing!'
+                    confirmButtonText: 'Ya, Kemas!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Processing!',
-                        'Processing Changes',
+                        'Dikemas!',
+                        'Status Pesanan Berhasil Diubah',
                         'success'
                       )
                     }
@@ -105,19 +167,19 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure to Picked?',
-                    text: "Once Picked, You will not be able to pending again",
+                    title: 'Apakah anda yakin?',
+                    text: "Status pesanan akan diubah jadi dikirim?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, Picked!'
+                    confirmButtonText: 'Ya, Kirim!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Picked!',
-                        'Picked Changes',
+                        'Dikirim!',
+                        'Status Pesanan Berhasil Diubah',
                         'success'
                       )
                     }
@@ -138,19 +200,19 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure to shipped?',
-                    text: "Once shipped, You will not be able to pending again",
+                    title: 'Apakah anda yakin?',
+                    text: "Status pesanan akan diubah jadi dalam perjalanan?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, shipped!'
+                    confirmButtonText: 'Ya, Paket Dalam Perjalanan!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'shipped!',
-                        'shipped Changes',
+                        'Dalam Perjalanan!',
+                        'Status Pesanan Berhasil Diubah',
                         'success'
                       )
                     }
@@ -172,19 +234,19 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Are you sure to delivered?',
-                    text: "Once delivered, You will not be able to pending again",
+                    title: 'Apakah anda yakin?',
+                    text: "Status pesanan akan diubah jadi selesai?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delivered!'
+                    confirmButtonText: 'Ya, Selesai!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'delivered!',
-                        'delivered Changes',
+                        'Selesai!',
+                        'Status Pesanan Berhasil Diubah',
                         'success'
                       )
                     }

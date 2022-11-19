@@ -22,9 +22,9 @@
                                 <a target="__blank" href="{{ url('/product/cetak-pdf') }}" class="btn btn-danger ml-auto">PDF</a>
                                 <a href="{{ route('export.excel') }}" class="btn btn-success ml-2">Export</a>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
+                                <!-- <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
                                     Import
-                                </button>
+                                </button> -->
                                 
                             </div>
                         </div>
