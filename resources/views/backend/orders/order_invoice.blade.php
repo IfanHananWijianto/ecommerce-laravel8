@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SALZA | Invoice</title>
+    <title>TOKOZAP | Invoice</title>
     <style>
         .page-break {
             page-break-after: always;
@@ -66,7 +66,7 @@
     <table width="100%" style="line-height: 1.2;">
         <tr style="font-size: 13px">
             <td width="10%">Penjual</td>
-            <td width="40%">: <strong>SALZA</strong> | esalza@gmail.com</td>
+            <td width="40%">: <strong>TOKOZAP</strong> | tokozap@gmail.com</td>
             <td width="17%">Pembeli</td>
             <td>: <strong>{{ $order->name }}</strong> | {{ $order->email }}</td>
         </tr>
@@ -126,7 +126,7 @@
                     <td><span style="font-size: 15px; font-weight: bold; color: rgb(39, 39, 39)">{{ $item->product->product_name_en }}</span> <br>
                         {{ $item->size }} - {{ $item->color }} <br><br>
                         <span style="font-size: 13px; color:gray;">Berat:</span> {{ $item->product->product_weight }}
-                        gr</td>
+                        Kg</td>
                     <td align="left">{{ $item->qty }} pcs <br><br><br><br></td>
                     <td align="right">Rp{{ number_format($item->price, 0, '', '.') }} <br><br><br><br></td>
                     @php
@@ -175,7 +175,7 @@
     <table width="100%" style="border-bottom: 1px solid #dedede"></table>
     <p>Invoice ini sah dan diproses oleh komputer.</p>
     <p style="line-height: 5px">
-        Silakan hubungi <strong>Salza Care</strong> apabila kamu membutuhkan bantuan.
+        Silakan hubungi <strong>Zap Care</strong> apabila kamu membutuhkan bantuan.
         <span style="float: right; font-style: italic">Terakhir diupdate: {{ $order->updated_at }} WIB</span>
     </p>
 

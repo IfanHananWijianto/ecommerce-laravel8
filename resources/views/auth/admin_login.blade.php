@@ -8,21 +8,21 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('backend/images/favicon.ico') }}">
 
-    <title>SALZA Admin - Log in </title>
-  
+    <title>TokoZap Admin - Log in </title>
+
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
-	  
-	<!-- Style-->  
+
+	<!-- Style-->
 	<link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">	
+	<link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">
 
 </head>
 <body class="hold-transition theme-primary bg-gradient-primary">
-	
+
 	<div class="container h-p100">
-		<div class="row align-items-center justify-content-md-center h-p100">	
-			
+		<div class="row align-items-center justify-content-md-center h-p100">
+
 			<div class="col-12">
 				<div class="row justify-content-center no-gutters">
 					<div class="col-lg-4 col-md-5 col-12">
@@ -31,7 +31,7 @@
 						</div>
 						<div class="p-30 rounded30 box-shadowed b-2 b-dashed">
 							<form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
-								@csrf 
+								@csrf
 
 								<div class="form-group">
 									<div class="input-group mb-3">
@@ -68,7 +68,7 @@
 									</div>
 									<!-- /.col -->
 									</div>
-							</form>	
+							</form>
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 
 		<!-- Vendor JS -->
 		<script src="{{ asset('backend/js/vendors.min.js') }}"></script>
-    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>	
+    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>
 
 	</body>
 </html>

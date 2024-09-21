@@ -97,8 +97,8 @@ Transfer Bank Manual
                                         bank pada no. rekening berikut!</p>
                                       <img src="{{ asset('frontend/assets/images/payments/bri.png') }}" alt="bri"
                                           style="width: 125px;">
-                                      <h3 style="float: right; margin-top: 0px;">029872653781 <br><span style="font-size: 14px; font-style: italic;">A.n. Salza Store</span></h3>
-                                      
+                                      <h3 style="float: right; margin-top: 0px;">029872653791 <br><span style="font-size: 14px; font-style: italic;">A.n. Zap Store</span></h3>
+
                                       <div class="form-group mt-50">
                                           <br>
                                           <label class="" for="foto">
@@ -106,7 +106,7 @@ Transfer Bank Manual
                                           </label>
                                           <input type="file" id="foto" name="bukti_pembayaran" class="form-control" accept="image/*" required>
                                       </div>
-    
+
                                       <p style="font-size: 12px; margin: 20px 0 15px; color: #b1b1b1">Saya
                                           menyetujui syarat dan ketentuan yang berlaku.</p>
                                       <button class="btn btn-primary">Buat Pesanan</button>

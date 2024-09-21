@@ -16,9 +16,9 @@ $route = Route::current()->getName();
                     @php
                     $setting = App\Models\SiteSetting::find(1);
                     @endphp
-                    
+
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
+
                         <h3><b>{{ $setting->company_name }}</b></h3>
                     </div>
                 </a>
@@ -211,8 +211,8 @@ $route = Route::current()->getName();
             @else
             @endif --}}
 
-            
-            
+
+
             <li class="header nav-small-cap">Kelola Pesanan</li>
 
             @if($orders == true)
@@ -270,7 +270,7 @@ $route = Route::current()->getName();
             @endif
 
             @if($returnorder == true)
-            
+
             <li class="treeview {{ ($prefix == '/return')?'active':'' }}  ">
                 <a href="#">
                     <i class="fa fa-th-list"></i>
@@ -293,7 +293,7 @@ $route = Route::current()->getName();
             @else
             @endif
 
-            
+
 
             @if($review == true)
 
@@ -434,7 +434,7 @@ $route = Route::current()->getName();
             @else
             @endif
 
-            
+
 
 
         </ul>

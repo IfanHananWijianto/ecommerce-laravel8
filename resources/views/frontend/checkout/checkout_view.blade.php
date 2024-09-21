@@ -31,7 +31,7 @@ Chekout
                                 <div class="panel-body">
                                     <div class="row">
                                         <!-- guest-login -->
-                                        <h4 class="checkout-subtitle"><b>Alamat Pengirim</b></h4>
+                                        <h4 class="checkout-subtitle"><b>Alamat Pengiriman</b></h4>
                                         <hr>
                                         <div class="col-md-6 col-sm-6 already-registered-login">
                                             <form class="register-form" action="{{ route('checkout.store') }}"
@@ -77,8 +77,8 @@ Chekout
                                             <div class="form-group">
                                                 <h5><b>Pilih Provinsi </b> <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <select name="division_id" class="form-control" required="">
-                                                        <option value="" selected="" disabled="">Pilih Provinsi</option>
+                                                    <select name="division_id" class="form-control">
+                                                        <option value="" hidden="">Pilih Provinsi</option>
                                                         @foreach($divisions as $item)
                                                         <option value="{{ $item->id }}">{{ $item->division_name }}
                                                         </option>
@@ -93,8 +93,8 @@ Chekout
                                                 <h5><b>Pilih Kota / Kabupaten</b> <span class="text-danger">*</span>
                                                 </h5>
                                                 <div class="controls">
-                                                    <select name="district_id" class="form-control" required="">
-                                                        <option value="" selected="" disabled="">Pilih Kota / Kabupaten
+                                                    <select name="district_id" class="form-control">
+                                                        <option value="" hidden="">Pilih Kota / Kabupaten
                                                         </option>
                                                     </select>
                                                     @error('district_id')
@@ -105,8 +105,8 @@ Chekout
                                             <div class="form-group">
                                                 <h5><b>Pilih Kecamatan</b> <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <select name="state_id" class="form-control" required="">
-                                                        <option value="" selected="" disabled="">Pilih Kecamatan
+                                                    <select name="state_id" class="form-control">
+                                                        <option value="" hidden="">Pilih Kecamatan
                                                         </option>
                                                     </select>
                                                     @error('state_id')
@@ -151,11 +151,7 @@ Chekout
                                             <strong>Kuantitas: </strong>
                                             ( {{ $item->qty }} )
 
-                                            <strong>Warna: </strong>
-                                            {{ $item->options->color }}
 
-                                            <strong>Ukuran: </strong>
-                                            {{ $item->options->size }}
                                         </li>
                                         @endforeach
                                         <hr>
@@ -196,11 +192,11 @@ Chekout
                                     <h4 class="unicase-checkout-title">Pilih Metode Pembayaran</h4>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <label for="">Stripe</label>
                                         <input type="radio" name="payment_method" value="stripe">
                                         <img src="{{ asset('frontend/assets/images/payments/4.png') }}">
-                                    </div> <!-- end col md 4 -->
+                                    </div> <!-- end col md 4 --> --}}
                                     <div class="col-md-3">
                                         <label for="">COD</label>
                                         <input type="radio" name="payment_method" value="cash">

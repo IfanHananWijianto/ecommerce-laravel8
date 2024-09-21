@@ -30,8 +30,7 @@
                             @if ($order->status != 'selesai')
                                 <h4 style="font-size: 16px; font-weight: 500" class="media-heading">
                                     {{ $item->product->product_name }}</h4>
-                                <p class="">{{ $item->size }} -
-                                    {{ $item->color }}</p>
+
                                 <p>{{ $item->product->product_code }}</p>
                                 <p style="font-size: 14px">{{ $item->qty }}
                                     produk x Rp{{ number_format($item->price, 0, ',', '.') }}
@@ -45,8 +44,7 @@
                                     onclick="productView(this.id)" class="btn btn-primary" style="padding: 6px 40px;">Beli Lagi
                                     </a>
                                 </span>
-                                <p class="">{{ $item->size }} -
-                                    {{ $item->color }}</p>
+
                                 <p>{{ $item->product->product_code }}</p>
                                 <span style="float: right">
                                     <a href="{{ url('product/details/'.$item->product_id.'/'.$item->product->product_slug ) }}"
@@ -100,14 +98,16 @@
                         <div class="col-md-4">
                             <p style="margin-bottom: 20px">Status Pesanan</p>
                             <p>Invoice</p>
-                            @if ($order->status == 'dikirim' || $order->status == 'dalam perjalanan' || $order->status == 'selesai')
+                            {{-- @if ($order->status == 'dikirim' || $order->status == 'dalam perjalanan' || $order->status == 'selesai')
                                 <p>Kurir</p>
-                                <p style="margin-bottom: 25px">Resi</p>
-                                <p style="margin-bottom: 35px">Cek Resi</p>
-                            @endif
+                                <p style="margin-bottom: 25px">No WA</p>
+                                <p style="margin-bottom: 35px">Chat Kurir</p><p><a href="https://wa.me/6283843452652">083843452652</a></p>
+                            @endif --}} <br>
                             <p>Tanggal Pembelian</p>
                             <p>Metode Pembayaran</p>
                             <p><strong style="font-size: 16px">Total Belanja</strong></p>
+                            <br>
+                            <p ><strong style="font-size: 14px">Klik Untuk Chat Kurir</p><p><a href="https://wa.me/6283843452652">083843452652</a></p>
                         </div>
                         <div class="col-md-8">
                             <p style="margin-bottom: 10px">
@@ -134,7 +134,7 @@
                                 <span class="badge badge-pill badge-warning" style="background: #008000; padding: 10px;"> Selesai
                                 </span>
                                 @endif
-                                
+
                                 @if($order->return_order == 1)
                                 <span class="badge badge-pill badge-warning" style="background:red; padding: 10px;">Pengembalian
                                 </span>
@@ -171,8 +171,11 @@
                                     <span style="margin-bottom: 10px;">{{ $order->resi }}</span>
                                 </p>
                                 <p style="margin-bottom: 20px">
-                                    @if ($order->kurir == 'JNE')
-                                        <a href="https://www.jne.co.id/id/beranda"><img src="{{ asset('frontend/assets/images/payments/jne.jpeg') }}" alt="" style="width: 60px;"></a>
+                                    <p style="margin-bottom: 10px">
+                                        <span style="margin-bottom: 10px;">{{ $order->kurir == 'JNE' }}</span>
+                                    </p>
+                                    {{-- @if ($order->kurir == 'JNE')
+                                        <a href="https://wa.me/6283843452652"><img src="{{ asset('frontend/assets/images/payments/jne.jpeg') }}" alt="" style="width: 60px;"></a>
                                         <img src="{{ asset('frontend/assets/images/payments/j&t.png') }}" alt="" style="width: 60px; filter: grayscale(1);">
                                         <img src="{{ asset('frontend/assets/images/payments/anteraja.png') }}" alt="" style="width: 60px; filter: grayscale(1);">
                                         <img src="{{ asset('frontend/assets/images/payments/sicepat.png') }}" alt="" style="width: 60px; filter: grayscale(1);">
@@ -191,8 +194,8 @@
                                         <img src="{{ asset('frontend/assets/images/payments/j&t.png') }}" alt="" style="width: 60px; filter: grayscale(1);">
                                         <img src="{{ asset('frontend/assets/images/payments/anteraja.png') }}" alt="" style="width: 60px; filter: grayscale(1);">
                                         <a href="https://www.sicepat.com/checkAwb"><img src="{{ asset('frontend/assets/images/payments/sicepat.png') }}" alt="" style="width: 60px;"></a>
-                                        
-                                    @endif
+
+                                    @endif --}}
                                 </p>
                             @endif
                             <p style="margin-bottom: 10px">
@@ -250,7 +253,7 @@
                             {{-- jika kolom cancel_order bernilai 1 --}}
                             {{-- tampilkan ini --}} <br>
                             <span class="badge badge-pill badge-warning" style="background: red; padding: 10px;">
-                                Anda telah mengirim permintaan pembatalan untuk produk ini 
+                                Anda telah mengirim permintaan pembatalan untuk produk ini
                             </span>
                         @else
 

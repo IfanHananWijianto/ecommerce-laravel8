@@ -148,7 +148,7 @@
                                 <form action="{{ route('order.update') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $order->id }}">
-                                    <tr>
+                                    {{-- <tr>
                                         <td>
                                             <div class="form-group">
                                                 <label>Kurir</label>
@@ -156,7 +156,7 @@
                                                     <option value="{{ $order->kurir }}">
                                                         {{ $order->kurir }}
                                                     </option>
-                                                    <option value="JNE">JNE</option>
+                                                    <option value="JNE">Zap Kurir</option>
                                                     <option value="JNT">JNT</option>
                                                     <option value="Anteraja">Anteraja</option>
                                                     <option value="Sicepat Express">Sicepat Express</option>
@@ -166,7 +166,7 @@
                                         <td></td>
                                         <td>
                                             <div class="form-group">
-                                                <label>Input Resi</label>
+                                                <label>Input No Wa</label>
                                                 <input type="text" class="form-control" name="resi"
                                                     value="{{ $order->resi }}" placeholder="{{ $order->kurir }}...">
                                             </div>
@@ -176,19 +176,19 @@
                                                 Ubah
                                             </button>
                                         </td>
-                                    </tr>
+                                    </tr> --}}
                                 </form>
                                 @elseif($order->status == 'selesai')
                                 <tr>
                                     <td>Kurir</td>
                                     <td>:</td>
-                                    <td> {{ $order->kurir }} </td>
+                                    <td> Zap Kurir  </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Resi</td>
+                                    <td>No WA</td>
                                     <td>:</td>
-                                    <td> {{ $order->resi }} </td>
+                                    <td> 083843452652 </td>
                                     <td></td>
                                 </tr>
                                 @endif
@@ -284,8 +284,6 @@
                                         <th width="12%"></th>
                                         <th>Nama Produk</th>
                                         <th>Barcode</th>
-                                        <th>Ukuran</th>
-                                        <th>Warna</th>
                                         <th>Berat</th>
                                         <th>Qty</th>
                                         <th>Harga</th>
@@ -301,9 +299,7 @@
                                         </td>
                                         <td>{{ $item->product->product_name }}</td>
                                         <td>{{ $item->product->product_code }}</td>
-                                        <td>{{ $item->size }}</td>
-                                        <td>{{ $item->color }}</td>
-                                        <td>{{ $item->weight }} gram</td>
+                                        <td>{{ $item->weight }} Kg</td>
                                         <td>{{ $item->qty }} pcs</td>
                                         <td>Rp{{ number_format($item->price, 0, ',', '.') }}</td>
                                         @php

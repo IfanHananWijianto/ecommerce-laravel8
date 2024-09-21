@@ -65,7 +65,7 @@
                                 <div class="form-group">
                                     <h5>Provinsi <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="text" name="division_name" class="form-control" placeholder="Nama Provinsi">
+                                        <input type="text" name="division_name" class="form-select input" placeholder="Nama Provinsi">
                                         @error('division_name')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror

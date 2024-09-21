@@ -3,7 +3,7 @@
 @section('content')
 
 @section('title')
-SALZA E-Commerce
+TOKOZAP E-Commerce
 @endsection
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
@@ -71,7 +71,7 @@ SALZA E-Commerce
                                             <h4 class="info-box-heading green">Kualitas Terjamin</h4>
                                         </div>
                                     </div>
-                                    <h6 class="text">3 Bulan garansi produk</h6>
+                                    <h6 class="text">Garansi produk</h6>
                                 </div>
                             </div>
                         </div>
@@ -344,7 +344,7 @@ SALZA E-Commerce
                         <div class="col-md-6 col-sm-6">
                             <div class="wide-banner cnt-strip">
                                 <div class="image"> <img class="img-responsive"
-                                        src="{{ asset('frontend/assets/images/banners/home-banner1.png') }}" alt="">
+                                        src="{{ asset('frontend/assets/images/banners/home-banner1.jpg') }}" alt="">
                                 </div>
                             </div>
                             <!-- /.wide-banner -->
@@ -353,7 +353,7 @@ SALZA E-Commerce
                         <div class="col-md-6 col-sm-6">
                             <div class="wide-banner cnt-strip">
                                 <div class="image"> <img class="img-responsive"
-                                        src="{{ asset('frontend/assets/images/banners/home-banner2.png') }}" alt="">
+                                        src="{{ asset('frontend/assets/images/banners/home-banner2.jpg') }}" alt="">
                                 </div>
                             </div>
                             <!-- /.wide-banner -->
@@ -371,7 +371,7 @@ SALZA E-Commerce
                 @include('frontend.common.hot_deals')
                 <!-- === === HOT DEALS: END ====== ===== -->
 
-                
+
 
             </div>
             <!-- ============================================== SIDEBAR : END ============================================== --> --}}
@@ -389,7 +389,7 @@ SALZA E-Commerce
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <img src="{{ asset($product->product_thambnail) }}" alt="">
+                                            <img class="img-responsive" src="{{ asset($product->product_thambnail) }}" alt="">
                                         </div>
                                         <!-- /.image -->
 
@@ -564,7 +564,7 @@ SALZA E-Commerce
                         <div class="col-md-12">
                             <div class="wide-banner cnt-strip">
                                 <div class="image"> <img class="img-responsive"
-                                        src="{{ asset('frontend/assets/images/banners/SALE.png') }}" alt="">
+                                        src="{{ asset('frontend/assets/images/banners/SALE.jpg') }}" alt="">
                                 </div>
                             </div>
                             <!-- /.wide-banner -->

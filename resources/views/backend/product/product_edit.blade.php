@@ -150,7 +150,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <h5>Ukuran Produk <span class="text-danger">*</span></h5>
@@ -177,7 +177,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-12">

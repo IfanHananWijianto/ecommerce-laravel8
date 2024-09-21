@@ -122,7 +122,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="stock-box">
-                                                <h6>Berat  <span id="pweight">{{ $product->product_weight }}</span> gram</h6>
+                                                <h6>Berat  <span id="pweight">{{ $product->product_weight }}</span>kg</h6>
                                                 <h6>Stok  {{ $product->product_qty }}</h6>
                                             </div>
                                         </div>
@@ -163,7 +163,7 @@
                                 </div><!-- /.price-container -->
 
                                 <!--     /// Add Product Color And Product Size ///// -->
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label class="info-title control-label">Pilih Warna <span> </span></label>
@@ -174,8 +174,8 @@
                                                 <option value="{{ $color }}">{{ ucwords($color) }}</option>
                                                 @endforeach
                                             </select>
-                                        </div> <!-- // end form group -->
-                                    </div> <!-- // end col 6 -->
+                                        </div>
+                                    </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             @if($product->product_size == null)
@@ -192,9 +192,9 @@
                                             </select>
                                             @endif
 
-                                        </div> <!-- // end form group -->
-                                    </div> <!-- // end col 6 -->
-                                </div><!-- /.row -->
+                                        </div>
+                                    </div>
+                                </div> --}}
 
                                 <div class="quantity-container info-container">
                                     <div class="row">
@@ -216,7 +216,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
+
                                         <input type="hidden" id="product_id" value="{{ $product->id }}">
                                         <div class="col-sm-7">
                                             <button type="submit" onclick="addToCart()" class="btn btn-primary"><i

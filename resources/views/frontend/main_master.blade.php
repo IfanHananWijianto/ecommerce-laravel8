@@ -159,22 +159,22 @@ $seo = App\Models\Seo::find(1);
 
                         <div class="col-md-4">
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="color">Pilih Warna</label>
                                 <select class="form-control" id="color" name="color">
 
 
                                 </select>
-                            </div> <!-- // end form group -->
+                            </div> <!-- // end form group --> --}}
 
 
-                            <div class="form-group" id="sizeArea">
+                            {{-- <div class="form-group" id="sizeArea">
                                 <label for="size">Pilih Ukuran</label>
                                 <select class="form-control" id="size" name="size">
                                     <option>1</option>
 
                                 </select>
-                            </div> <!-- // end form group -->
+                            </div> <!-- // end form group --> --}}
 
                             <div class="form-group">
                                 <label for="qty">Atur Jumlah</label>
@@ -223,7 +223,7 @@ $seo = App\Models\Seo::find(1);
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        // Start Product View with Modal 
+        // Start Product View with Modal
 
         function productView(id) {
             // alert(id)
@@ -244,7 +244,7 @@ $seo = App\Models\Seo::find(1);
                     $('#product_id').val(id);
                     $('#qty').val(1);
 
-                    // Product Price 
+                    // Product Price
                     if (data.product.product_discount == null) {
                         $('#pprice').text('');
                         $('#oldprice').text('');
@@ -255,7 +255,7 @@ $seo = App\Models\Seo::find(1);
                         $('#pprice').text(data.product.product_discount);
                         $('#oldprice').text(data.product.product_price);
 
-                    } // end prodcut price 
+                    } // end prodcut price
 
                     // Start Stock opiton
 
@@ -268,27 +268,27 @@ $seo = App\Models\Seo::find(1);
                         $('#aviable').text('');
                         $('#stockout').text('');
                         $('#stockout').text('tidak tersedia');
-                    } // end Stock Option 
+                    } // end Stock Option
 
                     // Color
-                    $('select[name="color"]').empty();
-                    $.each(data.color, function (key, value) {
-                        $('select[name="color"]').append('<option value=" ' + value + ' ">' +
-                            value + ' </option>')
-                    }) // end color
+                    // $('select[name="color"]').empty();
+                    // $.each(data.color, function (key, value) {
+                    //     $('select[name="color"]').append('<option value=" ' + value + ' ">' +
+                    //         value + ' </option>')
+                    // }) // end color
 
                     // Size
-                    $('select[name="size"]').empty();
-                    $.each(data.size, function (key, value) {
-                        $('select[name="size"]').append('<option value=" ' + value + ' ">' + value +
-                            ' </option>')
-                        if (data.size == "") {
-                            $('#sizeArea').hide();
-                        } else {
-                            $('#sizeArea').show();
-                        }
+                    // $('select[name="size"]').empty();
+                    // $.each(data.size, function (key, value) {
+                    //     $('select[name="size"]').append('<option value=" ' + value + ' ">' + value +
+                    //         ' </option>')
+                    //     if (data.size == "") {
+                    //         $('#sizeArea').hide();
+                    //     } else {
+                    //         $('#sizeArea').show();
+                    //     }
 
-                    }) // end size
+                    // }) // end size
 
 
                 }
@@ -297,24 +297,24 @@ $seo = App\Models\Seo::find(1);
 
 
         }
-        // Eend Product View with Modal 
+        // Eend Product View with Modal
 
 
-        // Start Keranjang Product 
+        // Start Keranjang Product
 
         function addToCart() {
             var product_name = $('#pname').text();
             var product_weight = $('#pweight').text();
             var id = $('#product_id').val();
-            var color = $('#color option:selected').text();
-            var size = $('#size option:selected').text();
+            // var color = $('#color option:selected').text();
+            // var size = $('#size option:selected').text();
             var quantity = $('#qty').val();
             $.ajax({
                 type: "POST",
                 dataType: 'json',
                 data: {
-                    color: color,
-                    size: size,
+                    // color: color,
+                    // size: size,
                     quantity: quantity,
                     product_weight: product_weight,
                     product_name: product_name
@@ -326,7 +326,7 @@ $seo = App\Models\Seo::find(1);
                     $('#closeModel').click();
                     // console.log(data)
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -348,13 +348,13 @@ $seo = App\Models\Seo::find(1);
 
                     }
 
-                    // End Message 
+                    // End Message
                 }
             })
 
         }
 
-        // End Keranjang Product 
+        // End Keranjang Product
     </script>
 
     <script type="text/javascript">
@@ -383,7 +383,7 @@ $seo = App\Models\Seo::find(1);
               <h3 class="name"><a href="#">${value.name}</a></h3>
               <div class="price"> Rp${numberformat(value.price)} X ${value.qty} </div>
             </div>
-            <div class="col-xs-1 action"> 
+            <div class="col-xs-1 action">
             <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
           </div>
         </div>
@@ -399,7 +399,7 @@ $seo = App\Models\Seo::find(1);
         }
         miniCart();
 
-        /// mini cart remove Start 
+        /// mini cart remove Start
         function miniCartRemove(rowId) {
             $.ajax({
                 type: 'GET',
@@ -408,7 +408,7 @@ $seo = App\Models\Seo::find(1);
                 success: function (data) {
                     miniCart();
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -430,20 +430,20 @@ $seo = App\Models\Seo::find(1);
 
                     }
 
-                    // End Message 
+                    // End Message
 
                 }
             });
 
         }
 
-        //  end mini cart remove 
+        //  end mini cart remove
     </script>
 
     <!--  /// Start Add Wishlist Page  //// -->
 
     <script type="text/javascript">
-        
+
         function addToWishList(product_id) {
             $.ajax({
                 type: "POST",
@@ -452,7 +452,7 @@ $seo = App\Models\Seo::find(1);
 
                 success: function (data) {
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -476,7 +476,7 @@ $seo = App\Models\Seo::find(1);
 
                     }
 
-                    // End Message 
+                    // End Message
 
 
                 }
@@ -509,7 +509,7 @@ $seo = App\Models\Seo::find(1);
                     <td class="col-md-7">
                         <div class="product-name"><a href="#">${value.product.product_name}</a></div>
                         <div class="price">
-                            ${value.product.product_discount == null ? 
+                            ${value.product.product_discount == null ?
                                 `Rp${numberformat(value.product.product_price)}` :
                                 `Rp${numberformat(value.product.product_discount)}
                                     <span>Rp${numberformat(value.product.product_price)}</span>`
@@ -534,7 +534,7 @@ $seo = App\Models\Seo::find(1);
 
 
 
-        ///  Wishlist remove Start 
+        ///  Wishlist remove Start
         function wishlistRemove(id) {
             $.ajax({
                 type: 'GET',
@@ -543,7 +543,7 @@ $seo = App\Models\Seo::find(1);
                 success: function (data) {
                     wishlist();
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -567,14 +567,14 @@ $seo = App\Models\Seo::find(1);
 
                     }
 
-                    // End Message 
+                    // End Message
 
                 }
             });
 
         }
 
-        // End Wishlist remove   
+        // End Wishlist remove
     </script>
 
 
@@ -598,26 +598,26 @@ $seo = App\Models\Seo::find(1);
                     <td class="col-md-2">
                         <img src="/${value.options.image} " alt="imga" style="width:60px; height:60px;">
                     </td>
-                    
+
                     <td class="col-md-2">
                         <div class="product-name">
                             <h5><a href="#">${value.name}</a></h5>
                         </div>
-                        <h5><strong>${value.options.color} </strong> - ${value.options.size == null ? `<span> .... </span>` : `<strong>${value.options.size} </strong></h5>`}  
+                        <h5><strong>${value.options.color} </strong> - ${value.options.size == null ? `<span> .... </span>` : `<strong>${value.options.size} </strong></h5>`}
                         <div class="price"><h5>Rp${numberformat(value.price)}</h5></div>
                     </td>
 
                     <td class="col-md-3">
                         <!-- jika qty bernilai satu, disable kan -->
                         ${value.qty > 1 ? `<button type="submit" class="btn btn-primary btn-sm" id="${value.rowId}" onclick="cartDecrement(this.id)" >-</button> ` : `<button type="submit" class="btn btn-primary btn-sm" disabled >-</button> `}
-                        <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >  
-                        <button type="submit" class="btn btn-primary btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>    
+                        <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
+                        <button type="submit" class="btn btn-primary btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>
                     </td>
 
                     <td class="col-md-2">
-                        <strong>Rp${numberformat(value.subtotal)}</strong> 
+                        <strong>Rp${numberformat(value.subtotal)}</strong>
                     </td>
-            
+
                     <td class="col-md-1 close-btn">
                         <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
                     </td>
@@ -643,7 +643,7 @@ $seo = App\Models\Seo::find(1);
                     $('#couponField').show();
                     $('#coupon_name').val('');
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -667,7 +667,7 @@ $seo = App\Models\Seo::find(1);
 
                     }
 
-                    // End Message 
+                    // End Message
 
                 }
             });
@@ -720,7 +720,7 @@ $seo = App\Models\Seo::find(1);
                         $('#couponField').hide();
                     }
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -743,7 +743,7 @@ $seo = App\Models\Seo::find(1);
                             icon: 'error',
                             title: data.error
                         })
-                    } // End Message 
+                    } // End Message
                 }
             })
         }
@@ -801,7 +801,7 @@ $seo = App\Models\Seo::find(1);
                     $('#couponField').show();
                     $('#coupon_name').val('');
 
-                    // Start Message 
+                    // Start Message
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -823,7 +823,7 @@ $seo = App\Models\Seo::find(1);
                             title: data.error
                         })
 
-                    } // End Message 
+                    } // End Message
                 }
             });
         }
